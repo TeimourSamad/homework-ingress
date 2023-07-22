@@ -1,0 +1,42 @@
+body {
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.main-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    top: 50%;
+    left: 50%;
+    bottom: 50%;
+}
+
+.button-first {
+    width: 80px;
+    background: lightgray;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-second {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: white;
+    margin-left: 3px;
+    transition: all .3s;
+}
+
+.active {
+    background: black;
+    margin-left: 43px;
+}

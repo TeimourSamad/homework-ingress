@@ -1,0 +1,151 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: rgb(238, 238, 238);
+}
+
+body input {
+    outline: none;
+}
+
+.main-container {
+    height: 100vh;
+    position: absolute;
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 50px 0 50px;
+    background: white;
+    gap: 36px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    position: relative;
+}
+
+.input-container .input-label {
+    font-weight: 500;
+    font-size: 12px;
+    color: #666666;
+    line-height: 18px;
+}
+
+.input-container .error-message {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: red;
+    position: absolute;
+    bottom: -22px;
+    display: none;
+}
+
+.input-container input {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.remember-me-section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 16px;
+}
+
+.remember-me-section input {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 20px;
+    width: 20px;
+}
+
+.remember-me-section label {
+    font-size: 16px;
+    line-height: 24px;  
+    font-weight: 400;
+    color: #666666;
+}
+
+.dropdown-section select {
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+    border: 2px solid #7A5CFA;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.dropdown-section  option {
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #7A5CFA;
+}
+
+.button-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#reset-button {
+    border: 1px solid #7A5CFA;
+    padding: 16px 50px;
+    border-radius: 8px;
+    color: #7A5CFA;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all .2s;
+}
+
+#create-button {
+    border: 1px solid #7A5CFA;
+    padding: 16px 50px;
+    border-radius: 8px;
+    color: white;
+    background: #7A5CFA;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all .2s;
+}
+
+.button-section #reset-button:hover {
+    background: #7A5CFA;
+    color: white;
+}
+
+.button-section #create-button:hover {
+    background: white;
+    color: #7A5CFA;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%; 
+    right: 8px;
+    pointer-events: none;
+    z-index: 2;
+    display: none;
+}
+
+.icon-success {
+    fill: green;
+}
+
+.icon-error {
+    fill: red;
+}
