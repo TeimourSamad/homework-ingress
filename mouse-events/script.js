@@ -1,39 +1,21 @@
-const image1 = document.querySelector('.first-image')
-const image2 = document.querySelector('.second-image')
-const image3 = document.querySelector('.third-image')
+let imgCntnr1 = document.querySelector('.cntnr1')
+let imgCntnr2 = document.querySelector('.cntnr2')
+let imgCntnr3 = document.querySelector('.cntnr3')
 
-image1.addEventListener('mouseover', () => {
-    image1.style.width = '80%'
-    image2.style.width = '30%'
-    image3.style.width = '30%'
+imgCntnr1.addEventListener('mouseover',()=>{
+    imgCntnr1.classList.remove("active")
+    imgCntnr2.classList.add("active")
+    imgCntnr3.classList.add("active")
+    })
+imgCntnr2.addEventListener('mouseover',()=>{
+imgCntnr2.classList.remove("active")
+imgCntnr1.classList.add("active")
+imgCntnr3.classList.add("active")
 })
 
-image1.addEventListener('mouseout', () => {
-    image1.style.width = '80%'
-    image2.style.width = '30%'
-    image3.style.width = '30%'
-})
 
-image2.addEventListener('mouseover', () => {
-    image1.style.width = '30%'
-    image2.style.width = '80%'
-    image3.style.width = '30%'
-})
-
-image2.addEventListener('mouseout', () => {
-    image1.style.width = '80%'
-    image2.style.width = '30%'
-    image3.style.width = '30%'
-})
-
-image3.addEventListener('mouseover', () => {
-    image1.style.width = '30%'
-    image2.style.width = '30%'
-    image3.style.width = '80%'
-})
-
-image3.addEventListener('mouseout', () => {
-    image1.style.width = '80%'
-    image2.style.width = '30%'
-    image3.style.width = '30%'
-})
+ imgCntnr3.addEventListener('mouseover',()=>{
+     imgCntnr3.classList.remove("active")
+     imgCntnr1.classList.add("active")
+     imgCntnr2.classList.add("active")
+        })

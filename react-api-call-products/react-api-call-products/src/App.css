@@ -1,0 +1,17 @@
+.main-container {
+
+}
+
+.search-input {
+  width: 500px;
+  height: 25px;
+  border: none;
+  background: transparent;
+  background: #e2e2e2;
+  padding-left: 5px;
+}
+
+.search-title {
+  font-size: 20px;
+  font-weight: 500;
+}
