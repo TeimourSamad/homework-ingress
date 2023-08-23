@@ -1,5 +1,14 @@
 .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .search-input {
@@ -14,4 +23,5 @@
 .search-title {
   font-size: 20px;
   font-weight: 500;
+  margin-top: 50px;
 }

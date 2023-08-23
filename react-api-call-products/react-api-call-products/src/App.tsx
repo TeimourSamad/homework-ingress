@@ -1,39 +1,47 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
+import Image from './ui/Photo/Image'
 
 const App = () => {
 
   const [inputValue, setInputValue] = useState('')
 
-  // const options = {
-  //   method: 'GET',
-  //   url: 'https://my-store2.p.rapidapi.com/catalog/products',
-  //   headers: {
-  //     'X-RapidAPI-Key': '7b2c80df08mshf3ef68513351e76p1f39a6jsn045db9b89cc3',
-  //     'X-RapidAPI-Host': 'my-store2.p.rapidapi.com'
-  //   }
-  // };
+  const [suggestedCategories, setSuggestedCategories] = useState()
+  const [uniqueCategories, setUniqueCategories] = useState()
+  const [products, setProducts] = useState([])
 
-  // const [products, setProducts] = useState([])
+  const categoryURL = 'https://api.escuelajs.co/api/v1/categories'
+  const productURL = 'https://api.escuelajs.co/api/v1/products'
+  
+  useEffect(() => {
+    const fetchApi = async () => {
+      try {
+        const response = await axios.get(productURL);
+        setProducts(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+     console.log(products)
 
-  // useEffect(() => {
-  //   const fetchApi = async () => {
-  //     try {
-  //       const response = await axios.request(options);
-  //       console.log(response.data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   fetchApi()
-  //   console.log(products)
-  // }, [])
+    }
+    fetchApi()
 
+  }, [])
+
+  const fetchBySearch = async (e) => {
+    e.preventDefault()
+    const response = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${inputValue}`)
+    setProducts(response.data)
+  }
+  
   return (
     <div className='main-container'>
-      <input className='search-input' onChange={e => setInputValue(e.target.value)} placeholder='Search...' />
-      <span className='search-title'>Images</span>
+        <form onSubmit={fetchBySearch} className='search-container'>
+          <input className='search-input' onChange={e => setInputValue(e.target.value)} placeholder='Search...' />
+          <span className='search-title'>{inputValue.charAt(0).toUpperCase() + inputValue.slice(1)} Images</span>
+        </form>
+        <Image products={products} />
     </div>
   )
 }
